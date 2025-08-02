@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -38,7 +37,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.eddev.instadev.R
 
-@Preview
 @Composable
 fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
 
@@ -60,7 +58,9 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
             Text(
                 modifier = Modifier.padding(top = 22.dp),
                 text = "Español (España)",
-                color = MaterialTheme.colorScheme.onBackground
+
+                color = MaterialTheme.colorScheme.onBackground,
+                style = MaterialTheme.typography.bodyLarge
             )
             Spacer(Modifier.weight(1f))
             Image(
@@ -71,7 +71,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
             Spacer(Modifier.weight(1f))
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(30),
+                shape = MaterialTheme.shapes.extraLarge,
                 value = uiState.email,
                 onValueChange = { loginViewModel.onEmailChange(it) },
                 label = {
@@ -84,7 +84,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(30),
+                shape =  MaterialTheme.shapes.extraLarge,
                 value = uiState.password, onValueChange = { loginViewModel.onPasswordChange(it) },
                 label = {
                     Text(
