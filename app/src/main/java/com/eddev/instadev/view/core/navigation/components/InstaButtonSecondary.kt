@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun InstaButtonSecondary(
     modifier: Modifier,
+    text: String = "",
     border: BorderStroke = BorderStroke(
         1.dp,
         MaterialTheme.colorScheme.primary
@@ -17,6 +18,6 @@ fun InstaButtonSecondary(
     onClick: () -> Unit
 ) {
     OutlinedButton(modifier = modifier, border = border, onClick = { onClick() }) {
-        InstaText(text = "Crear cuenta nueva", color = MaterialTheme.colorScheme.primary)
+        InstaText(text = text, color = MaterialTheme.colorScheme.primary)
     }
 }

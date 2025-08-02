@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 fun InstaButtonTertiary(modifier: Modifier = Modifier, text: String, onClick: ()->Unit) {
     TextButton (modifier = modifier, onClick = {onClick()}) {
         InstaText(
-            text = "Has olvidado la contraseña?",
+            text = text,
             color = MaterialTheme.colorScheme.onSurface
         )
     }

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">InstaDev</string>
+
+    <!-- Login Screen -->
+    <string name="login_screen_header_text_language">Español (Latinoamérica)</string>
+    <string name="login_screen_header_textfield_email">Usuario, correo electrónico o móvil</string>
+    <string name="login_screen_header_textfield__password">Contraseña</string>
+    <string name="login_screen_header_button_login">Iniciar sesión</string>
+    <string name="login_screen_header_text_forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="login_screen_header_button_sign_up">Crear cuenta nueva</string>
+
+
 </resources>
