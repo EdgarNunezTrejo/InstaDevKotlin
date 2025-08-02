@@ -60,7 +60,9 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
             Text(
                 modifier = Modifier.padding(top = 22.dp),
                 text = "Español (España)",
-                color = MaterialTheme.colorScheme.onBackground
+
+                color = MaterialTheme.colorScheme.onBackground,
+                style = MaterialTheme.typography.bodyLarge
             )
             Spacer(Modifier.weight(1f))
             Image(
