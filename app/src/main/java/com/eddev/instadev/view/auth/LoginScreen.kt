@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -45,7 +46,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
         ) {
             InstaText(
                 modifier = Modifier.padding(top = 22.dp),
-                text = "Español (España)",
+                text = stringResource(R.string.login_screen_header_text_language),
             )
             Spacer(Modifier.weight(1f))
             Image(
@@ -61,7 +62,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
                 onValueChange = { loginViewModel.onEmailChange(it) },
                 label = {
                     InstaText(
-                        text = "Usuario, correo electrónico o móvil",
+                        text = stringResource(R.string.login_screen_header_textfield_email),
                     )
                 }
             )
@@ -72,7 +73,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
                 value = uiState.password, onValueChange = { loginViewModel.onPasswordChange(it) },
                 label = {
                     InstaText(
-                        text = "Contraseña",
+                        text = stringResource(R.string.login_screen_header_textfield__password),
                     )
                 }
 
@@ -80,19 +81,20 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
             Spacer(Modifier.height(10.dp))
             InstaButton(
                 modifier = Modifier.fillMaxWidth(),
-                text = "Iniciar sesión",
+                text = stringResource(R.string.login_screen_header_button_login),
                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
                 onClick = {},
                 shape = MaterialTheme.shapes.extraLarge,
                 enabled = uiState.isLoginEnabled,
             )
-            InstaButtonTertiary( text = "", onClick = {})
+            InstaButtonTertiary( text = stringResource(R.string.login_screen_header_text_forgot_password), onClick = {})
             Spacer(Modifier.weight(1.3f))
             InstaButtonSecondary(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 4.dp),
                 onClick = {},
+                text = stringResource(R.string.login_screen_header_button_sign_up)
             )
             Icon(
                 modifier = Modifier
