@@ -1,6 +1,7 @@
 package com.eddev.instadev.view.core.navigation.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.runtime.Composable
@@ -9,7 +10,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun InstaButtonSecondary(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     text: String = "",
     border: BorderStroke = BorderStroke(
         1.dp,
@@ -17,7 +18,7 @@ fun InstaButtonSecondary(
     ),
     onClick: () -> Unit
 ) {
-    OutlinedButton(modifier = modifier, border = border, onClick = { onClick() }) {
+    OutlinedButton(modifier = modifier.fillMaxWidth(), border = border, onClick = { onClick() }) {
         InstaText(text = text, color = MaterialTheme.colorScheme.primary)
     }
 }

@@ -1,4 +1,4 @@
-package com.eddev.instadev.view.auth
+package com.eddev.instadev.view.auth.login
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
