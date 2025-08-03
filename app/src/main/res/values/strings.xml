@@ -3,11 +3,24 @@
 
     <!-- Login Screen -->
     <string name="login_screen_header_text_language">Español (Latinoamérica)</string>
-    <string name="login_screen_header_textfield_email">Usuario, correo electrónico o móvil</string>
-    <string name="login_screen_header_textfield__password">Contraseña</string>
-    <string name="login_screen_header_button_login">Iniciar sesión</string>
-    <string name="login_screen_header_text_forgot_password">¿Has olvidado la contraseña?</string>
-    <string name="login_screen_header_button_sign_up">Crear cuenta nueva</string>
+    <string name="login_screen_textfield_email">Usuario, correo electrónico o móvil</string>
+    <string name="login_screen_textfield_password">Contraseña</string>
+    <string name="login_screen_button_login">Iniciar sesión</string>
+    <string name="login_screen_text_forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="login_screen_button_sign_up">Crear cuenta nueva</string>
 
-
+    <!-- SignUp Screen -->
+    <string name="signup_screen_header_title">¿Cuál es tu %1$s?</string>
+    <string name="signup_screen_header_disclaimer">Introduce tu %1$s de contacto. Nadie lo verá en tu perfil.</string>
+    <string name="signup_screen_method_email">correo electrónico</string>
+    <string name="signup_screen_method_phone">número de móvil</string>
+    <string name="signup_screen_textbox_placeholder_email">Correo electrónico</string>
+    <string name="signup_screen_textbox_placeholder_phone">Número de móvil</string>
+    <string name="signup_screen_notification_disclaimer_email">También enviaremos correos electrónicos. Puedes cancelar esta opción cuando quieras.</string>
+    <string name="signup_screen_notification_disclaimer_phone">Puede que recibas notificaciones nuestras en Whatsapp y por SMS por motivos de seguridad y para iniciar sesión.</string>
+    <string name="signup_screen_notification_disclaimer_email_more_info">Más información.</string>
+    <string name="signup_screen_button_next">Siguiente</string>
+    <string name="signup_screen_outlined_button_navigate_phone">Registrarte con tu número de móvil</string>
+    <string name="signup_screen_outlined_button_navigate_email">Registrarte con tu correo electrónico</string>
+    <string name="signup_screen_text_find_my_account">Buscar mi cuenta</string>
 </resources>

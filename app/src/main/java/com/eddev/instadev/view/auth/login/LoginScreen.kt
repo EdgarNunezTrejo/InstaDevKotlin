@@ -1,4 +1,4 @@
-package com.eddev.instadev.view.auth
+package com.eddev.instadev.view.auth.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,9 +29,10 @@ import com.eddev.instadev.view.core.navigation.components.InstaButton
 import com.eddev.instadev.view.core.navigation.components.InstaButtonSecondary
 import com.eddev.instadev.view.core.navigation.components.InstaButtonTertiary
 import com.eddev.instadev.view.core.navigation.components.InstaText
+import com.eddev.instadev.view.core.navigation.components.InstaTextField
 
 @Composable
-fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
+fun LoginScreen(loginViewModel: LoginViewModel = viewModel(), onCreateAccountClick: () -> Unit) {
     val uiState by loginViewModel.uiState.collectAsStateWithLifecycle()
 
 
@@ -55,46 +56,36 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
                 contentDescription = "Instadev logo"
             )
             Spacer(Modifier.weight(1f))
-            OutlinedTextField(
-                modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.extraLarge,
+            InstaTextField(
                 value = uiState.email,
                 onValueChange = { loginViewModel.onEmailChange(it) },
-                label = {
-                    InstaText(
-                        text = stringResource(R.string.login_screen_header_textfield_email),
-                    )
-                }
+                label = stringResource(R.string.login_screen_textfield_email)
             )
             Spacer(Modifier.height(12.dp))
-            OutlinedTextField(
-                modifier = Modifier.fillMaxWidth(),
-                shape = MaterialTheme.shapes.extraLarge,
-                value = uiState.password, onValueChange = { loginViewModel.onPasswordChange(it) },
-                label = {
-                    InstaText(
-                        text = stringResource(R.string.login_screen_header_textfield__password),
-                    )
-                }
-
+            InstaTextField(
+                value = uiState.password,
+                onValueChange = { loginViewModel.onPasswordChange(it) },
+                label = stringResource(R.string.login_screen_text_forgot_password)
             )
             Spacer(Modifier.height(10.dp))
             InstaButton(
                 modifier = Modifier.fillMaxWidth(),
-                text = stringResource(R.string.login_screen_header_button_login),
+                text = stringResource(R.string.login_screen_button_login),
                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
                 onClick = {},
                 shape = MaterialTheme.shapes.extraLarge,
                 enabled = uiState.isLoginEnabled,
             )
-            InstaButtonTertiary( text = stringResource(R.string.login_screen_header_text_forgot_password), onClick = {})
+            InstaButtonTertiary(
+                text = stringResource(R.string.login_screen_text_forgot_password),
+                onClick = {})
             Spacer(Modifier.weight(1.3f))
             InstaButtonSecondary(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 4.dp),
-                onClick = {},
-                text = stringResource(R.string.login_screen_header_button_sign_up)
+                onClick = { onCreateAccountClick() },
+                text = stringResource(R.string.login_screen_button_sign_up)
             )
             Icon(
                 modifier = Modifier

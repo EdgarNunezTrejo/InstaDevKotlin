@@ -6,4 +6,7 @@ import kotlinx.serialization.Serializable
 object Login
 
 @Serializable
-object SignUp
+data class SignUp(val isPhoneMethod: Boolean)
+
+@Serializable
+object SignUpEmail
