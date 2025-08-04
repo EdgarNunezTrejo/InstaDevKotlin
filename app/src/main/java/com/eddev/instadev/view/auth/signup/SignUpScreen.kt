@@ -22,6 +22,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.eddev.instadev.R
@@ -32,10 +33,11 @@ import com.eddev.instadev.view.core.navigation.components.InstaText
 import com.eddev.instadev.view.core.navigation.components.InstaTextField
 import com.eddev.instadev.view.core.navigation.components.InstaTopBar
 
+
 @Composable
 fun SignUpScreen(
     isPhoneMethod: Boolean = true,
-    signUpViewModel: SignUpViewModel = viewModel(),
+    signUpViewModel: SignUpViewModel = hiltViewModel(),
     onBackClick: () -> Unit,
 ) {
 

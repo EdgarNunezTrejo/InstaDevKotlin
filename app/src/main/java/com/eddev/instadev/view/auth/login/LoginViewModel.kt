@@ -2,12 +2,23 @@ package com.eddev.instadev.view.auth.login
 
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.eddev.instadev.domain.usecase.LoginUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(val login: LoginUseCase) : ViewModel() {
     private val _uiState = MutableStateFlow(LoginUiState())
+    private fun isEmailValid(email: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    private fun isPasswordValid(password: String): Boolean = password.length >= 6
+
+
     val uiState: StateFlow<LoginUiState> = _uiState
 
     fun onEmailChange(email: String) {
@@ -32,9 +43,13 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    fun isEmailValid(email: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    fun onClickSelected(){
+        viewModelScope.launch (Dispatchers.IO) {
+            login(user = _uiState.value.email, password = _uiState.value.password)
+        }
+    }
 
-    fun isPasswordValid(password: String): Boolean = password.length >= 6
+
 }
 
 data class LoginUiState(

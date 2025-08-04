@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.eddev.instadev.R
@@ -32,7 +33,9 @@ import com.eddev.instadev.view.core.navigation.components.InstaText
 import com.eddev.instadev.view.core.navigation.components.InstaTextField
 
 @Composable
-fun LoginScreen(loginViewModel: LoginViewModel = viewModel(), onCreateAccountClick: () -> Unit) {
+fun LoginScreen(
+    loginViewModel: LoginViewModel = hiltViewModel(),
+                onCreateAccountClick: () -> Unit) {
     val uiState by loginViewModel.uiState.collectAsStateWithLifecycle()
 
 
